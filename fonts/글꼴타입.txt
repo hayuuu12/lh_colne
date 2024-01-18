@@ -1,0 +1,27 @@
+ttf (True Type Fonts) : 윈도우, 맥OS용 글꼴
+otf (Open Type Fonts) : MS에서 만듦. 주요 컴퓨터 플랫폼에서 ttf와 함께 사용됨
+woff (Web Open Fonts) : 웹페이지에서 사용. 웹표준 권장.
+woff2.0 : woff보다 압축률이 좋음 
+
+svg : 벡터용 파일 (엣지, 크롬, 파이어폭스에선 사용불가)
+eot : 예전 ms explorer 사용하는 디자인 글꼴 (크롬, 사파리, 파이어폭스, 오페라에서 사용불가. 엣지만 됨)
+
+
+@font-face {
+    font-family: 'IBM';
+    src: url('../fonts/IBMPlexSansKR-Light.eot');    /* 익플은 eot만 인식가능해서 따로 써줌*/
+    src: url('../fonts/IBMPlexSansKR-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/IBMPlexSansKR-Light.woff2') format('woff2'),
+        url('../fonts/IBMPlexSansKR-Light.woff') format('woff'),
+        url('../fonts/IBMPlexSansKR-Light.ttf') format('truetype'),
+        url('../fonts/IBMPlexSansKR-Light.svg#IBMPlexSansKR-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+수정 할 부분 드래그해서 ctrl + shift + L 하면 같은 부분 전체 수정 가능
+
+
