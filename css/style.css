@@ -1,140 +1,379 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css);
-@import url('font.css');
-@import url(animate.css);
-@import url(grid.css);
-html, body{
-    height: 100%;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css');
+@import url('fonts.css');
+@import url('animate.min.css');
+@import url('grid.css');
+html,body{
+    height:100%;
 }
 body{
-    font-family: 'IBM' , sans-serif;
-    font-size: 1rem;
-    color: #454545;
-    margin: 0;
+    font-family:'IBM', sans-serif;
+    font-size:16px;
+    color:#454545;
+    margin:0;
 }
-a, a:link{
-    color: #454545;
-    text-decoration: none;
+a,a:link{
+    color:#454545;
+    text-decoration:none;
 }
 a:hover{
-    color: #000;
+    color:#000;
 }
 .container{
-    width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    width:1400px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-/************************ HEADER ***********************************/
+/************** HEADER ***************/
 header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;  /* 양쪽 끝 정렬 */
+    width:100%;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 50px;
-    position: fixed;
-    z-index: 100;
-    color: #fff;
+    position:fixed;
+    z-index:100;
+    color:#fff;
 }
-
 ul.main-nav{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:flex;
     justify-content: space-between;
 }
 a.logo{
-    font-size: 1.8em;
-    font-weight: 800;
-    color:#fff;
+   font-size: 1.8em;
+   font-weight:800;
+   color:#fff;
 }
 nav{
-    width:55%;
+    width:53%;
 }
 .main-nav>li>a{
     font-size: 1.4em;
-    font-weight: 500;
+    font-weight:500;
     color:#fff;
 }
 .right{
-    display: flex;
+    display:flex;
     justify-content: space-between;
-    width: 300px;
+    align-items: center;
+    width:300px;
 }
 .searchform{
-    border:1px solid #fff;
-    margin-right: 8px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 30px;
-    overflow: hidden;
-    position: relative;
+   border:1px solid #fff;
+   margin-right:8px;
+   padding-top:5px;
+   padding-bottom:5px;
+   border-radius:30px;
+   overflow:hidden;
+   position:relative;
 }
 input.search{
-    border: none;
+    border:none;
     outline: none;
-    padding: 5px 10px 5px 35px;  /* 서치 입력창 위치 조정 */
-    font-size: 1.2em;
-    background-color:transparent ;
+    padding:5px 10px 5px 35px;
+    font-size:1.2em;
+    background-color:transparent;
     color:#fff;
 }
 .search-icon{
-    position: absolute;
-    z-index: 100;
-    top: 13px;
-    left: 12px;
+    position:absolute;
+    z-index:100;
+    top:13px;
+    left:12px;
 }
 .btn-h-line{
-    background: transparent;  /* 투명 */
+    background:transparent;
     outline: none;
-    border: none;
-    padding: 5px;
-    border-radius: 15px;
-    border: 1px solid #fff;
+    border:none;
+    padding:5px;
+    border-radius:15px;
+    border:1px solid #fff;
     color:#fff;
+    cursor:pointer;
 }
 .btn-list{
-    margin-left: 8px;
-    padding: 9px 10px;
+    margin-left:8px;
+    padding:9px 10px;
 }
-.btn-h-line>i{
-    font-size: 1.5em;
+.btn-list>i{
+    font-size:1.5em;
 }
 
-
-/************************ HERO ***********************************/
-.vdobox{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding: 0;
-    margin: 0;
+/***************************** GNB FULL NAV ********************************/
+#gnb{
+   position:fixed;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   overflow:hidden;
+   overflow-y: auto;
+   background-color:#16398B;
+   z-index:999;
+}
+#gnb>ul{
+    width:100%;
+    height:auto;
+    display:flex;
+    padding:0 5.5rem;
+    list-style:none;
+    margin:0;
+    color:#fff;
+}
+#gnb>ul>li{
+    flex:1;
+    padding: 4rem 2rem 4rem 1.5rem;
+    border-right:1px solid rgba(255,255,255,.2);
+}
+#gnb>ul>li:first-child{
+    border-left:1px solid rgba(255,255,255,.2);
+}
+#gnb>ul>li>a{
+    color:#fff;
+    font-size:1.8em;
+    font-weight:600;
+    transition: all 0.6s;
+}
+#gnb>ul>li>a:hover, 
+.submenu>ul>li>a:hover{
+    color:#ffce00;
+}
+.submenu{
+    margin-top:2rem;
+}
+.submenu ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.submenu>ul>li{
+    overflow:hidden;
+}
+.submenu>ul>li>a{
+   display:block;
+   font-size:1.3rem;
+   font-weight:500;
+   line-height:3;
+   color:#fff; 
+   letter-spacing:-2px;
+   white-space:nowrap;
+   text-overflow:ellipsis;
+   transition: all 0.6s;
+   white-space: nowrap;
+}
+.lnb-detail a{
+    color:#91ace6;
+    font-weight:500;
+    display:block;
+    transition: all 0.6s;
+    line-height:1.8;
+    letter-spacing:-1px;
+    white-space: nowrap;  /* 줄바꿈 절대 안되게 */
+}
+.lnb-detail a::before{
+    content:"- ";
+}
+.lnb-detail a:hover{
+    color:#ffce00;
+    text-decoration: underline;
+}
+.closebox{
+    position: absolute;
+    top: 50px;
+    right: 45px;
+    width: 30px;
+    height: 30px;
     overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.closebox:hover{
+    transform: rotateZ(180deg);
+}
+.closebox>div:first-child{
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    transform: rotateZ(45deg);
+    top:28px;
+    left: -20px;
+}
+.closebox>div:last-child{
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    transform: rotateZ(-45deg);
+    top: -3px;
+    left: -20px;
+}
+
+
+
+/************** HERO *****************/
+.vcontainer{
+   width:100%;
+   height:100%;   
+}
+.vdobox{
+    width:100%;
+    height:100%;
+    position:relative;
+    padding:0;
+    margin:0;
+    overflow:hidden;
 }
 video.vdo{
-    width: 100%;
+   width:100%;
+   height:100%;
+   object-fit:cover;
+   object-position: center top;
 }
 .vdobox h1{
-    position: absolute;
-    color: #fff;
-    font-size: 4em;
-    line-height: 1.2em;
-    font-weight: 900;
+    position:absolute;
+    color:#fff;
+    font-size:4em;
+    line-height:1.2em;
+    font-weight:900;
     text-align: center;
-    top: 200px;
-    left: 50%;
+    top:200px;
+    left:50%;
     transform: translateX(-50%);
-    z-index: 2;
+    z-index:2;
     text-shadow: 2px 2px 2px rgba(0,0,0,1);
+    letter-spacing:-5px;
+    width:100%;
 }
 .vdobox p{
-    position: absolute;
-    color: #333;
-    font-size: 1.5em;
-    font-weight: 300;
+    width:100%;
+    position:absolute;
+    color:#333;
+    font-size:1.5em;
+    font-weight:300;
     text-align: center;
-    top: 400px;
-    left: 50%;
+    top:400px;
+    left:50%;
     transform: translateX(-50%);
-    z-index: 2;
+    z-index:2;
+}
+.circle-box{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    bottom:-110px;
+    left:calc( 50% - 110px);
+    background-color:rgba(0, 0, 0, 0.7);
+    position:absolute;
+    z-index:10;
+}
+.btnbox{
+    width:15px;
+    height:20px;
+    border:2px solid #fff;
+    position:absolute;
+    top:30px;
+    left: calc(50% - 7.5px);
+    z-index:11;
+    border-radius:5px;
+}
+.line{
+    position:absolute;
+    top:2px;
+    left: 50%;
+    width:2px;
+    height:5px;
+    background:#fff;
+    animation-name: line-action;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+.circle-box p{
+    position:absolute;
+    top:15px;
+    color:#fff;
+    z-index:22;
+    font-size:1em;
+    font-weight:500;
+    width:220px;
+}
+@keyframes line-action {
+    from{
+        top:0;
+    }
+    to{
+        top: 8px;
+    }
+}
+@media screen and (max-width:1600px) {
+    .vdobox{
+        height:auto;
+    }
+    .vdobox h1{
+        font-size:3em;
+    }
+    .vdobox p{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:768px) {
+    header{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    header .logo{
+        font-size:1.3em;
+        font-weight:500;
+    }
+    .vcontainer{
+        position:relative;
+    }
+    .vcontainer::after{
+        display:block;
+        content:"";
+        padding-bottom:45%;
+    }
+    .vdobox{
+       position:absolute;
+       top:0;
+       left: 0;
+       width:100%;
+       height:45%;
+    }
+    .vdobox h1{
+        top:100px;
+        font-size:2em;
+        font-weight:500;
+        letter-spacing:-2px;
+    }
+    .vdobox p{
+        top:200px;
+        font-size: 1em;
+        color:#fff;
+        width:80%;
+    }
+    .vdo{
+        height:100%;
+        width:100%;
+        object-fit: cover;
+    }
+    nav, .searchform{
+        display:none;
+    }
+    .right{
+        width:15%;
+    } 
+    .btnbox p{
+        width:150px;
+        top:15px;
+    }
+    .btn-h-line span{
+        font-size:0.6em;
+        padding-left:8px;
+        padding-right:8px;
+    }
 }
