@@ -14,4 +14,8 @@ $(function(){
         $('.searchform, .btn-h-line').stop().toggleClass("black-border");
     });
 
+    $('.main-nav>li').hover(function(){
+        $(this).find('.d-submenu-main').toggle();
+    });
+
 }); //jquery
