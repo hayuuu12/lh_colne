@@ -52,8 +52,22 @@ $(function(){
     //배너 에니메이션
     //$('.banner-in').css('width', (504*4)+ "px"); //width 값 구하는 식
 
-    setInterval(mySiie, 5000);  //무한 반복
-    function mySiie(){
+    let bannerPlay;
+
+    //clearInterval을 이용하여 애니메이션을 정지한다.
+    function stopInterval(){
+        clearInterval(bannerPlay);
+        bannerPlay = null;
+    }
+
+    //setInterval을 이용해 다시 시작한다.
+    function playInterval(){
+        bannerPlay = setInterval(mySlide, 3000);
+    }
+    playInterval();
+
+    //jquery 애니메이션 함수 
+    function mySlide(){
         count++;
         if(count > 4){
             count =1;
@@ -68,4 +82,36 @@ $(function(){
         });
     }
 
+    //애니메이션을 거꾸로 돌리는 함수
+    function myPrevSlide(){
+        count--;
+        if(count < 1){
+            count = 4;
+        }
+        $('.count').text(count);
+        $('.banner-in img:last-child').clone().prependTo('.banner-in');
+        $('.banner-in img:last-child').remove();
+        $('.banner-in').css('left','-504px').animate({
+            'left':'0'
+        },500);
+    }
+
+    $('.playbtn').click(function(){
+        if($(this).hasClass('ri-stop-fill')){
+            $(this).removeClass('ri-stop-fill').addClass('ri-play-fill');
+            stopInterval();
+        }else{
+            $(this).removeClass('ri-play-fill').addClass('ri-stop-fill');
+            playInterval();
+        }
+    });
+    $('.ri-arrow-left-s-line').click(function(){
+        myPrevSlide();
+    });
+
+    $('.ri-arrow-right-s-line').click(function(){
+        mySlide();
+    });
+
 }); //jquery
+

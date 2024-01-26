@@ -732,7 +732,7 @@ ul.notice-nav .nav-list::after{
     margin-top: 2em;
 }
 .notice-list li{
-    padding: 20px 5px;
+    padding: 15px 5px;
     font-size: 1.2em;
     font-weight: 500;
 }
@@ -784,4 +784,46 @@ li.y span{
 .banner-in img{
     width: 504px;
     float: left;
+}
+.btns i{
+    cursor: pointer;
+}
+.notice-service{
+    background: #ecf0f5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    height: 143px;
+}
+.notice-service h1,
+.notice-service p{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+.service-title{
+    width: 40%;
+}
+.service-title h1{
+    font-size: 2.2em;
+}
+.service-title p{
+    margin-top:10px;
+    font-size: 2.1em;
+    color: #2f5bc1;
+}
+.service-time{
+    width: 60%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    letter-spacing: -2px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.service-time p{
+    margin-top: 10px;
 }
