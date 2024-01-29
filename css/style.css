@@ -24,6 +24,11 @@ a:hover{
     margin-left:auto;
     margin-right:auto;
 }
+h1 small{
+    font-size: 20px;
+    color: #666;
+    margin-left: 30px;
+}
 .justify-between{
     justify-content: space-between;
 }
@@ -826,4 +831,87 @@ li.y span{
 }
 .service-time p{
     margin-top: 10px;
+}
+
+/**********************  배경 색상 *********************************/
+.background-blue{
+    background-color: #eff4ff;
+    margin-top: 500px;
+    position: relative;
+}
+
+/************************* section major *******************************************/
+#major{
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    top:-500px;
+}
+.major-first, .major-second, .major-third{
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-size: cover ;
+    position: relative;
+}
+.major-first{
+    background: url(../images/buildings-1850129_1920.jpg) no-repeat;
+}
+.major-second{
+    background: url(../images/architecture-2256489_1920.jpg) no-repeat center top;
+}
+.major-third{
+    background: url(../images/living-room-1835923_1920.jpg) no-repeat center bottom;
+}
+.major-textbox{
+    width: 60%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 15px;
+    background: #fff;
+    overflow: hidden;
+    height: 200px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+}
+#major a.circle{
+    position: absolute;
+    left: calc(50% - 32.5px);
+    bottom: 65px;
+    display: block;
+    background: rgba(0,0,0,0.5);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+    color: #fff;
+    line-height: 65px;
+    transition: all 300ms;
+}
+#major a.circle:hover{
+    transform: rotateZ(180deg);
+}
+#major h2.tsf{
+    transform: rotateZ(270deg) translate(-40px);
+    color: #fff;
+}
+.major-textbox h2{
+    font-size: 1.8em;
+}
+.major-textbox h2 em{
+    font-style: normal;
+    color: #2f5bc1;
+}
+.major-textbox ul{
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+.major-textbox ul li{
+    padding: 0;
 }
